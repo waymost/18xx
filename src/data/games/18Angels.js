@@ -1,14 +1,16 @@
 const game = {
   // Generic Game Info
   info: {
-    // title: "18Angels",
+    title: "18Angels",
     // subtitle: "Building the World's Larget Electric Railway System",
     designer: "Matthew Waymost",
     background: "water",
     width: 150,
     orientation: "horizontal",
-    titleX: 140,
+    titleRotate: -90,
+    titleX: 160,
     titleY: 1700,
+    titleSize: 120,
     color_5: "cyan",
     color_10: "blue",
     currency: "USD"
@@ -612,12 +614,19 @@ const game = {
           "F8", "F10", "F12", "F20", 
           "G17", 
           "H6", "H16", "H18", 
-          "I3", "I11", "I13", "I15", "I17", 
+          "I11", "I13", "I15", "I17", 
           "J4", "J8", "J10", "J22", 
           "K5", "K7", "K17", "K19", "K21", 
           "L4", "L14", "L18", "L20", "L22", "L24", 
           "M9", "M11", "M19", "M21", "M23", 
           "N10", "N12", "N14", "N16"]
+      },
+      {
+        color: "water",
+        hexes: ["B12", "B14", 
+          "C15", "C17", "C19", "C21", 
+          "D22", "E23", "F24", 
+          "H22", "I23", "J24"]
       },
       {
         color: "plain",
@@ -763,12 +772,72 @@ const game = {
       },
       {
         color: "gray",
-        labels: [{label: "Los Angeles"}],
+        labels: [
+          {
+            label: "LA",
+            angle: 210,
+            percent: 0.8
+          },
+          {
+            label: "Los",
+            angle: 330,
+            percent: 0.52,
+            size: 10,
+            // rotate: 30,
+          },
+          {
+            label: "Angeles",
+            angle: 325,
+            percent: 0.72,
+            size: 10,
+            // rotate: 330,
+          }
+        ],
+        cities: [
+          {
+            companies: [
+              {
+                label: "",
+                color: "black"
+              }
+            ],
+            name: {
+              name: ""
+            }
+          }
+        ],
+        track: [{ side: 1 }, { side: 2 }, { side: 3 }, { side: 4 }, { side: 5 }],
         hexes: ["G9"]
       },
       {
-        copy: "G9",
-        labels: [{label: "Pasadena"}],
+        color: "plain",
+        labels: [
+          {
+            label: "P",
+            angle: 180,
+            percent: 0.6
+          }
+        ],
+        cities: [
+          {
+            size: 2,
+            companies: [
+              {
+                label: "1",
+                color: "blue"
+              },
+              {
+                label: "2",
+                color: "blue"
+              }
+            ],
+            name: {
+              name: "Pasadena",
+              reverse: true
+            }
+          }
+        ],
+        // labels: [{label: "Pasadena"}],
         hexes: ["I5"]
       },
       {
@@ -803,9 +872,9 @@ const game = {
           reverse: true,
           name: {name: "San Bernardino"},
           revenues: [
-            {color: "yellow", cost: "10"},
-            {color: "green", cost: "20"},
-            {color: "brown", cost: "30"}
+            {color: "yellow", cost: "30"},
+            {color: "green", cost: "40"},
+            {color: "brown", cost: "50"}
           ]
         },
         offBoardTrack: [{side: 3}],
@@ -817,9 +886,9 @@ const game = {
           reverse: true,
           name: {name: "Newport Beach"},
           revenues: [
-            {color: "yellow", cost: "10"},
-            {color: "green", cost: "20"},
-            {color: "brown", cost: "30"}
+            {color: "yellow", cost: "30"},
+            {color: "green", cost: "40"},
+            {color: "brown", cost: "50"}
           ]
         },
         offBoardTrack: [{side: 3}],
@@ -830,9 +899,9 @@ const game = {
         offBoardRevenue: {
           name: {name: "Mt. Lowe"},
           revenues: [
-            {color: "yellow", cost: "10"},
-            {color: "green", cost: "20"},
-            {color: "brown", cost: "30"}
+            {color: "yellow", cost: "20"},
+            {color: "green", cost: "30"},
+            {color: "brown", cost: "40"}
           ]
         },
         offBoardTrack: [{side: 1}],
@@ -852,24 +921,60 @@ const game = {
       },
       {
         color: "water",
-        divides: [{side: 4}],
-        track: [{type:"offboard",side:4}, {type:"offboard",side:5}],
-        icons: [{ type: "port", angle: 120, percent: 0.5 }, { type: "port", angle: 300, percent: 0.5 }],
+        // divides: [{side: 4}],
+        track: [{type:"offboard",side:4}],
+        offBoardRevenue: {
+          reverse: true,
+          name: {name: "Long Wharf"},
+          revenues: [
+            {color: "yellow", cost: "40"},
+            {color: "green", cost: "20"},
+            {color: "brown", cost: "0"}
+          ]
+        },
+        icons: [{ type: "port", percent: 0.667 }],
+        // icons: [{ type: "port", angle: 120, percent: 0.5 }, { type: "port", angle: 300, percent: 0.5 }],
+        // values: [{ value: 20, angle: 0, percent: 0.58 }],
+        companies: [
+          {
+            label: "SM",
+            angle: 155,
+            rotate: 270,
+            percent: 0.8,
+            left: 10,
+            right: 50
+          }
+        ],
         // values: [{ value: 20, angle: 0, percent: 0.58 }],
         hexes: ["A11"]
       },
+      // {
+      //   color: "water",
+      //   track: [{type:"offboard",side:5}],
+      //   icons: [{ type: "port", angle: 150, percent: 0.25 }, { type: "port", angle: 330, percent: 0.25 }],
+      //   values: [{ value: 20, angle: 60, percent: 0.58 }],
+      //   hexes: ["B12"]
+      // },
       {
         color: "water",
+        offBoardRevenue: {
+          reverse: true,
+          // name: {name: "Port of Los Angeles"},
+          revenues: [
+            {color: "yellow", cost: "20"},
+            {color: "green", cost: "30"},
+            {color: "brown", cost: "50"}
+          ]
+        },
         track: [{type:"offboard",side:5}],
-        icons: [{ type: "port", angle: 150, percent: 0.25 }, { type: "port", angle: 330, percent: 0.25 }],
-        values: [{ value: 20, angle: 60, percent: 0.58 }],
-        hexes: ["B12"]
-      },
-      {
-        color: "water",
-        track: [{type:"offboard",side:5}],
-        icons: [{ type: "port" }],
-        values: [{ value: 20, angle: 0, percent: 0.58 }],
+        icons: [{ type: "port", percent: 0.667 }],
+        companies: [
+          {
+            label: "RB",
+            angle: 135,
+            percent: 0.667
+          }
+        ],// values: [{ value: 20, angle: 0, percent: 0.58 }],
         hexes: ["D18"]
       },
       {
@@ -878,21 +983,44 @@ const game = {
           reverse: true,
           name: {name: "Port of Los Angeles"},
           revenues: [
-            {color: "yellow", cost: "10"},
-            {color: "green", cost: "20"},
+            {color: "yellow", cost: "20"},
+            {color: "green", cost: "40"},
+            {color: "brown", cost: "70"}
+          ]
+        },
+        track: [{type:"offboard",side:4}],
+        icons: [{ type: "port", percent: 0.667 }],
+        // values: [{ value: 20, angle: 0, percent: 0.58 }],
+        companies: [
+          {
+            label: "SP",
+            angle: 135,
+            percent: 0.667
+          }
+        ],// values: [{ value: 20, angle: 0, percent: 0.58 }],
+        hexes: ["G23"]
+      },
+      {
+        color: "water",
+        offBoardRevenue: {
+          reverse: true,
+          // name: {name: "Port of Los Angeles"},
+          revenues: [
+            {color: "yellow", cost: "20"},
+            {color: "green", cost: "0"},
             {color: "brown", cost: "30"}
           ]
         },
         track: [{type:"offboard",side:4}],
         icons: [{ type: "port", percent: 0.667 }],
         // values: [{ value: 20, angle: 0, percent: 0.58 }],
-        hexes: ["G23"]
-      },
-      {
-        color: "water",
-        track: [{type:"offboard",side:4}],
-        icons: [{ type: "port" }],
-        values: [{ value: 20, angle: 0, percent: 0.58 }],
+        companies: [
+          {
+            label: "HB",
+            angle: 135,
+            percent: 0.667
+          }
+        ],// values: [{ value: 20, angle: 0, percent: 0.58 }],
         hexes: ["K25"]
       },
       {
@@ -933,6 +1061,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "4",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Santa Monica"
             }
@@ -944,7 +1078,7 @@ const game = {
         color: "plain",
         labels: [
           {
-            label: "OO",
+            label: "V",
             angle: 240,
             percent: 0.6
           }
@@ -953,6 +1087,12 @@ const game = {
           {
             angle: 125,
             percent: 0.6,
+            companies: [
+              {
+                label: "5",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Ocean Park",
               reverse: true
@@ -961,6 +1101,12 @@ const game = {
           {
             angle: 355,
             percent: 0.6,
+            companies: [
+              {
+                label: "6",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Venice"
             },
@@ -1006,8 +1152,14 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "7",
+                color: "blue"
+              }
+            ],
             name: {
-              name: ""
+              name: "Redondo Beach"
             }
           }
         ],
@@ -1028,6 +1180,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "3",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Glendale"
             }
@@ -1051,6 +1209,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "8",
+                color: "blue"
+              }
+            ],
             name: {
               name: "San Pedro"
             }
@@ -1062,6 +1226,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "9",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Long Beach"
             }
@@ -1097,6 +1267,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "10",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Huntington Beach"
             }
@@ -1120,6 +1296,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "11",
+                color: "blue"
+              }
+            ],
             name: {
               name: ""
             }
@@ -1142,6 +1324,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "12",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Glendora"
             }
@@ -1321,6 +1509,17 @@ const game = {
         centerTowns: [
           {
             name: {
+              name: "Altadena"
+            }
+          }
+        ],
+        hexes: ["I3"]
+      },
+      {
+        copy: "C9",
+        centerTowns: [
+          {
+            name: {
               name: ""
             }
           }
@@ -1332,11 +1531,22 @@ const game = {
         centerTowns: [
           {
             name: {
-              name: ""
+              name: "Alhambra"
             }
           }
         ],
         hexes: ["J6"]
+      },
+      {
+        copy: "C9",
+        centerTowns: [
+          {
+            name: {
+              name: "Artesia"
+            }
+          }
+        ],
+        hexes: ["K17"]
       },
       {
         copy: "C9",
