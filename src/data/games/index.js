@@ -15,6 +15,7 @@ import game_1889 from "./1889";
 import game_1890 from "./1890";
 import game_1899 from "./1899";
 import game_18AL from "./18AL";
+import game_18Angels from "./18Angels"
 import game_18EU from "./18EU";
 import game_18Mex from "./18Mex";
 import game_FourthAge from "./FourthAge";
@@ -38,6 +39,7 @@ let all_games = {
   "1890": game_1890,
   "1899": game_1899,
   "18AL": game_18AL,
+  "18Angels": game_18Angels,
   "18EU": game_18EU,
   "18Mex": game_18Mex,
   FourthAge: game_FourthAge,
