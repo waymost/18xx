@@ -3446,6 +3446,142 @@ const tiles = {
     cities: [{ size: 4 }],
     track: [ { side: 2 }, {side: 3}, {side: 4}, {size: 5} ]
   },
+
+  // **************
+  // 18Angels tiles
+  // **************
+
+  "LA51": {
+    color: "yellow",
+    labels: [ { label: "V", angle: 150, percent: 0.85 } ],
+    values: [ { angle: 335, percent: 0.75, value: 20 } ],
+    cities: [{angle: 210, percent: 0.55},
+             {angle: 45, percent: 0.275}],
+    track: [{type: "gentle", side: 1}]
+  },
+  "LA52": {
+    color: "green",
+    labels: [ { label: "V", angle: 330, percent: 0.85 } ],
+    values: [{angle: 180, percent: 0.75, value: 30}],
+    cities: [{angle: 120, percent: 0.5},
+             {angle: 240, percent: 0.5}],
+    track: [{type: "gentle", side: 1}, {type: "gentle", side: 5}]
+  },
+  "LA53": {
+    color: "brown",
+    labels: [ { label: "V", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [{ size: 2 }],
+    track: [{side: 1}, {side: 3}, {side: 5}]
+  },
+  "LA54": {
+    color: "gray",
+    labels: [ { label: "V", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.875, value: 70}],
+    cities: [{ size: 3 }],
+    track: [{side: 1}, {side: 3}, {side: 4}, {side: 5}]
+  },
+
+  "LA55": {
+    color: "brown",
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 3 }, { side: 4 }, { side: 5 } ]
+  },
+  "LA56": {
+    color: "brown",
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 4 }, { side: 5 }, { side: 6 } ]
+  },
+  "LA57": {
+    color: "brown",
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 2 }, { side: 4 }, { side: 5 } ]
+  },
+  "LA58": {
+    color: "gray",
+    values: [{angle: 210, percent: 0.75, value: 70}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 2 }, { side: 3 }, { side: 4 }, { side: 5 } ]
+  },
+
+  "LA61": {
+    color: "yellow",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 20}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 } ]
+  },
+  "LA62": {
+    color: "green",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 30}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 }, { side: 4 } ]
+  },
+  "LA63": {
+    color: "green",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 30}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 }, { side: 5 } ]
+  },
+  "LA64": {
+    color: "green",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 30}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 }, { side: 6 } ]
+  },
+  "LA65": {
+    color: "brown",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 }, { side: 4 }, { side: 5 } ]
+  },
+  "LA66": {
+    color: "brown",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 50}],
+    cities: [ { size: 1 } ],
+    track: [ { side: 1 }, { side: 3 }, { side: 4 } ]
+  },
+  "LA67": {
+    color: "gray",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 70}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 4 }, { side: 5 }, { side: 6 } ]
+  },
+  "LA68": {
+    color: "gray",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 70}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 3 }, { side: 4 }, { side: 5 } ]
+  },
+  "LA69": {
+    color: "gray",
+    labels: [ { label: "B", angle: 150, percent: 0.85 } ],
+    values: [{angle: 210, percent: 0.75, value: 70}],
+    cities: [ { size: 2 } ],
+    track: [ { side: 1 }, { side: 2 }, { side: 4 }, { side: 5 } ]
+  },
+
+
+  "LAX": {
+    color: "white",
+    borders: [{side: 1, color: "black"},
+              {side: 2, color: "black"},
+              {side: 3, color: "black"},
+              {side: 4, color: "black"},
+              {side: 5, color: "black"},
+              {side: 6, color: "black"}],
+  },
+
 };
 
 export default tiles;

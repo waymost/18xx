@@ -560,48 +560,62 @@ const game = {
   ],
 
   tiles: {
+    // Yellow
+    "7": 4,
+    "8": 12,
+    "9": 12,
+    // Yellow doink
     "3": 2,
-    "5": 2,
-    "6": 2,
-    "7": 2,
-    "8": 5,
-    "9": 5,
-    "57": 2,
-    "58": 3,
-    "437": 1,
-    "438": 1,
+    "58": 7,
+    "4": 7,
+    // Yellow city
+    "5": 1,
+    "6": 8,
+    "57": 8,
     // Green
-    "12": 1,
-    "13": 1,
-    "14": 1,
-    "15": 3,
-    "16": 1,
-    "19": 1,
-    "20": 1,
-    "23": 2,
-    "24": 2,
+    "23": 6,
+    "24": 6,
     "25": 1,
-    "26": 1,
-    "27": 1,
+    "26": 2,
+    "27": 2,
     "28": 1,
     "29": 1,
-    "205": 1,
-    "206": 1,
-    "439": 1,
-    "440": 1,
-    // Brown
-    "39": 1,
-    "40": 1,
-    "41": 1,
-    "42": 1,
-    "45": 1,
-    "46": 1,
-    "47": 1,
-    "448": 4,
-    "465": 1,
-    "466": 1,
-    "492": 1,
-    "611": 2
+    // Green doink
+    "141": 6,
+    "142": 6,
+    "143": 2,
+    "144": 2,
+    // Green city
+    "12": 1,
+    "13": 4,
+    "205": 6,
+    "206": 6,
+    // Brown -- none
+    // Brown doink
+    "145": 3,
+    "146": 3,
+    "147": 2,
+    // Brown city
+    "LA55": 7,
+    "LA56": 6,
+    "LA57": 6,
+    "LA58": 6,
+    // Beach tiles
+    "LA61": 4,
+    "LA62": 2,
+    "LA63": 2,
+    "LA64": 2,
+    "LA65": 2,
+    "LA66": 2,
+    "LA67": 1,
+    "LA68": 1,
+    "LA69": 1,
+    // Venice tiles
+    "LA51": 1,
+    "LA52": 1,
+    "LA53": 1,
+    "LA54": 1,
+    "LAX": 24,
   },
 
   map: {
@@ -611,15 +625,15 @@ const game = {
         color: "plain",
         hexes: ["D2", "D12", "D14", 
           "E3", "E5", "E7", "E9", 
-          "F8", "F10", "F12", "F20", 
+          "F10", "F12", "F20", 
           "G17", 
           "H6", "H16", "H18", 
           "I11", "I13", "I15", "I17", 
           "J4", "J8", "J10", "J22", 
           "K5", "K7", "K17", "K19", "K21", 
           "L4", "L14", "L18", "L20", "L22", "L24", 
-          "M9", "M11", "M19", "M21", "M23", 
-          "N10", "N12", "N14", "N16"]
+          "M9", "M11", "M21", "M23", 
+          "N10", "N12", "N14", "N16", "N18"]
       },
       {
         color: "water",
@@ -692,7 +706,7 @@ const game = {
           "C7", 
           "D6", "D20", 
           "E11", "E19", "E21", 
-          "F6", "F22", 
+          "F22", 
           "G3", "G15", 
           "H2", "H4", 
           "I9",
@@ -701,6 +715,17 @@ const game = {
           "L2", "L10", "L12", 
           "M13", 
           "N2", "N4"]
+      },
+      {
+        color: "plain",
+        terrain: [{cost: "$20"}],
+        borders: [
+          {
+            side: 5,
+            color: "mountain"
+          }
+        ],
+        hexes: ["F6"]
       },
       {
         color: "plain",
@@ -719,8 +744,8 @@ const game = {
       {
         color: "plain",
         terrain: [{type: "river", cost: ""}],
-        hexes: ["E5", "I11", "I15", "H16", "H18",
-          "L8", "K9", "J12", "J16", "J18"]
+        hexes: ["I11", "I15", "H16", "H18",
+          "M5","L8", "K9", "J12", "J16", "J18"]
       },
       {
         color: "plain",
@@ -754,6 +779,12 @@ const game = {
         terrain: [{type: "river", percent: 0.38},
                   {cost: "$90", angle: 180, percent: 0.1}],
         hexes: ["C5", "G7", "M3", "K11"]
+      },
+      {
+        color: "plain",
+        terrain: [{type: "river", percent: 0.38},
+                  {cost: "$20", angle: 180, percent: 0.1}],
+        hexes: ["E5"]
       },
       {
         color: "plain",
@@ -825,10 +856,6 @@ const game = {
               {
                 label: "1",
                 color: "blue"
-              },
-              {
-                label: "2",
-                color: "blue"
               }
             ],
             name: {
@@ -847,7 +874,7 @@ const game = {
           revenues: [
             {color: "yellow", cost: "10"},
             {color: "green", cost: "20"},
-            {color: "brown", cost: "30"}
+            {color: "brown", cost: "40"}
           ]
         },
         offBoardTrack: [{side: 1}],
@@ -1008,7 +1035,7 @@ const game = {
           revenues: [
             {color: "yellow", cost: "20"},
             {color: "green", cost: "0"},
-            {color: "brown", cost: "30"}
+            {color: "brown", cost: "40"}
           ]
         },
         track: [{type:"offboard",side:4}],
@@ -1051,7 +1078,7 @@ const game = {
         cities: [
           {
             name: {
-              name: ""
+              name: "Van Nuys"
             }
           }
         ],
@@ -1059,16 +1086,24 @@ const game = {
       },
       {
         copy: "C3",
+        labels: [
+          {
+            label: "B",
+            angle: 210,
+            percent: 0.75
+          }
+        ],
         cities: [
           {
             companies: [
               {
-                label: "4",
+                label: "3",
                 color: "blue"
               }
             ],
             name: {
-              name: "Santa Monica"
+              name: "Santa Monica",
+              reverse: true,
             }
           }
         ],
@@ -1079,8 +1114,8 @@ const game = {
         labels: [
           {
             label: "V",
-            angle: 240,
-            percent: 0.6
+            angle: 210,
+            percent: 0.75
           }
         ],
         cities: [
@@ -1089,7 +1124,7 @@ const game = {
             percent: 0.6,
             companies: [
               {
-                label: "5",
+                label: "4",
                 color: "blue"
               }
             ],
@@ -1103,7 +1138,7 @@ const game = {
             percent: 0.6,
             companies: [
               {
-                label: "6",
+                label: "5",
                 color: "blue"
               }
             ],
@@ -1119,7 +1154,7 @@ const game = {
         cities: [
           {
             name: {
-              name: ""
+              name: "Lankershim"
             }
           }
         ],
@@ -1150,16 +1185,24 @@ const game = {
       },
       {
         copy: "C3",
+        labels: [
+          {
+            label: "B",
+            angle: 210,
+            percent: 0.75
+          }
+        ],
         cities: [
           {
             companies: [
               {
-                label: "7",
+                label: "6",
                 color: "blue"
               }
             ],
             name: {
-              name: "Redondo Beach"
+              name: "Redondo Beach",
+              reverse: true,
             }
           }
         ],
@@ -1182,7 +1225,7 @@ const game = {
           {
             companies: [
               {
-                label: "3",
+                label: "2",
                 color: "blue"
               }
             ],
@@ -1211,7 +1254,7 @@ const game = {
           {
             companies: [
               {
-                label: "8",
+                label: "7",
                 color: "blue"
               }
             ],
@@ -1224,16 +1267,24 @@ const game = {
       },
       {
         copy: "C3",
+        labels: [
+          {
+            label: "B",
+            angle: 210,
+            percent: 0.75
+          }
+        ],
         cities: [
           {
             companies: [
               {
-                label: "9",
+                label: "8",
                 color: "blue"
               }
             ],
             name: {
-              name: "Long Beach"
+              name: "Long Beach",
+              reverse: true,
             }
           }
         ],
@@ -1244,6 +1295,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "11",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Whittier"
             }
@@ -1265,60 +1322,28 @@ const game = {
       },
       {
         copy: "C3",
+        labels: [
+          {
+            label: "B",
+            angle: 210,
+            percent: 0.75
+          }
+        ],
         cities: [
           {
             companies: [
               {
-                label: "10",
+                label: "9",
                 color: "blue"
               }
             ],
             name: {
-              name: "Huntington Beach"
+              name: "Huntington Beach",
+              reverse: true,
             }
           }
         ],
         hexes: ["K23"]
-      },
-      {
-        copy: "C3",
-        cities: [
-          {
-            name: {
-              name: ""
-            }
-          }
-        ],
-        terrain: [{type: "river", percent: 0.75}],
-        hexes: ["M5"]
-      },
-      {
-        copy: "C3",
-        cities: [
-          {
-            companies: [
-              {
-                label: "11",
-                color: "blue"
-              }
-            ],
-            name: {
-              name: ""
-            }
-          }
-        ],
-        hexes: ["M7"]
-      },
-      {
-        copy: "C3",
-        cities: [
-          {
-            name: {
-              name: ""
-            }
-          }
-        ],
-        hexes: ["M15"]
       },
       {
         copy: "C3",
@@ -1331,6 +1356,28 @@ const game = {
               }
             ],
             name: {
+              name: "Covina"
+            }
+          }
+        ],
+        hexes: ["M7"]
+      },
+      {
+        copy: "C3",
+        cities: [
+          {
+            name: {
+              name: "Fullerton"
+            }
+          }
+        ],
+        hexes: ["M15"]
+      },
+      {
+        copy: "C3",
+        cities: [
+          {
+            name: {
               name: "Glendora"
             }
           }
@@ -1342,7 +1389,7 @@ const game = {
         cities: [
           {
             name: {
-              name: ""
+              name: "Orange"
             }
           }
         ],
@@ -1352,6 +1399,12 @@ const game = {
         copy: "C3",
         cities: [
           {
+            companies: [
+              {
+                label: "10",
+                color: "blue"
+              }
+            ],
             name: {
               name: "Santa Ana"
             }
@@ -1408,7 +1461,7 @@ const game = {
         centerTowns: [
           {
             name: {
-              name: "El Segundo"
+              name: "Hawthorne"
             }
           }
         ],
@@ -1433,7 +1486,7 @@ const game = {
         centerTowns: [
           {
             name: {
-              name: "Hawthorne"
+              name: "South Los Angeles"
             }
           }
         ],
@@ -1450,11 +1503,11 @@ const game = {
         hexes: ["F14"]
       },
       {
-        copy: "C9",
-        centerTowns: [
+        copy: "C3",
+        cities: [
           {
             name: {
-              name: ""
+              name: "Gardena"
             }
           }
         ],
@@ -1498,7 +1551,19 @@ const game = {
         centerTowns: [
           {
             name: {
-              name: ""
+              name: "Bell"
+            }
+          }
+        ],
+        terrain: [{type: "river", percent: 0.625}],
+        hexes: ["H12"]
+      },
+      {
+        copy: "C9",
+        centerTowns: [
+          {
+            name: {
+              name: "Lynwood"
             }
           }
         ],
@@ -1553,11 +1618,11 @@ const game = {
         centerTowns: [
           {
             name: {
-              name: ""
+              name: "Anaheim"
             }
           }
         ],
-        hexes: ["N18"]
+        hexes: ["M19"]
       }
     ]
   }
